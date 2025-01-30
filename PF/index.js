@@ -92,31 +92,34 @@ const quizzes = [
 ];
 
 function startQuiz() {
-    let listQuiz = quizList();
     while (true) {
         let options = prompt(`Seleccione una opción:
             1 - Participar en una encuesta.
             2 - Ver resultados de una encuesta.
             3 - Salir.
         `);
-
+            
+        let listQuiz = quizList();
         switch (options) {
             case '1':
-                indexQuiz = parseInt(prompt(`Seleccione la encuenta en que desea participar: \n${listQuiz}`)) - 1;
+                let indexQuiz = parseInt(prompt(`Seleccione la encuenta en que desea participar: \n${listQuiz}`)) - 1;
                 if (quizzes[indexQuiz]) {
                     quizVote(quizzes[indexQuiz]);
+                    console.log("Respuestas registradas correctamente.");
                 }
+                break;
             case '2':
-                indexQuiz = parseInt(prompt(`Seleccione la encuenta que desea revisar: \n${listQuiz}`)) - 1;
-                if (quizzes[indexQuiz]) {
-                    quizResults(quizzes[indexQuiz]);
+                let indQuiz = parseInt(prompt(`Seleccione la encuenta que desea revisar: \n${listQuiz}`)) - 1;
+                if (quizzes[indQuiz]) {
+                    let result = quizResults(quizzes[indQuiz]);
+                    console.log(result);
                 }
+                break;
             case '3':
                 console.log("Gracias por participar en las encuestas.");
-                break;
+                return;
             default:
                 console.log("Opción no válida.");
-                break;
         }
     }
 }
@@ -128,7 +131,7 @@ function quizList() {
 
 function quizVote(quiz) {
     for (let i = 0; i < quiz.questions.length; i++) {
-        let question = quiz.questions[i].question;
+        let question = `Pregunta ${i + 1} - ${quiz.questions[i].question}`;
         let answer = '';
         for (let index = 0; index < 4; index++) {
             answer += `${index + 1} - ${quiz.questions[i].answers[index]}\n`;
@@ -139,18 +142,17 @@ function quizVote(quiz) {
         }
         quiz.questions[i].votes[vote]++;
     }
-    console.log("Respuestas registradas correctamente.");
 }
 
 function quizResults(quiz) {
     let results = `Los resultados de la encuesta ${quiz.quizz} son:\n`;
-    /* for (let i = 0; i < quiz.questions.length; i++) {
+    for (let i = 0; i < quiz.questions.length; i++) {
         results += `Pregunta ${i + 1} - ${quiz.questions[i].question}\n`;
         for (let index = 0; index < 4; index++) {
             results += `${index + 1} - ${quiz.questions[i].answers[index]}, votos: ${quiz.questions[i].votes[index]}\n`;
         }
-    } */
-    console.log(results);
+    }
+    return results;
 }
 
 startQuiz();
