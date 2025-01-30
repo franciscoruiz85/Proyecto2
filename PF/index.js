@@ -1,8 +1,8 @@
 const createQuiz = () => {
     const quizz = prompt("Ingrese el nombre de la encuesta:");
     const questions = [];
-    for (let index = 0; index < 2; index++) {
-        question = prompt(`Ingrese la pregunta ${index + 1} de la encuesta:\nRECUERDE: Cada pregunta debe tener 4 opciones de respuesta.`);
+    for (let index = 0; index < 8; index++) {
+        let question = prompt(`Ingrese la pregunta ${index + 1} de la encuesta:\nRECUERDE: Cada pregunta debe tener 4 opciones de respuesta.`);
         let answers = [];
         for (let index = 0; index < 4; index++) {
             let option = prompt(`Ingrese la opción de respuesta ${index + 1}:`);
