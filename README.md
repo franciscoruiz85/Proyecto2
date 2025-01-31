@@ -37,7 +37,7 @@ Ambos permiten almacenar los votos de cada pregunta y revisar el resultado final
       <li>Muestra por consola mensaje de agradecimiento por participar en las encuestas.</li>
     </ol>
 </ol>
-![image](https://github.com/user-attachments/assets/68149ecc-7ca7-4d51-80ac-9eaa40d61699)
+<img src="https://github.com/user-attachments/assets/3cad7cc4-62b3-4870-ac6d-367c66f82ced" alt="Vista del menú de opciones">
 <h3>Formato 2 - Sistema de Votación Programación Orientada a Objetos</h3>
 <ol type="I">
   <li>Presenta un menú de opciones.</li>
@@ -70,6 +70,5 @@ Ambos permiten almacenar los votos de cada pregunta y revisar el resultado final
       <li>Muestra mensaje de agradecimiento por participar en las encuestas.</li>
     </ol>
 </ol>
-![image](https://github.com/user-attachments/assets/2171fbfd-9a77-46ca-9e33-ee107993f310)
-
+<img src=https://github.com/user-attachments/assets/b2595060-e619-49aa-943b-cf21bfa2b614  alt="Vista del menú de opciones">
 
